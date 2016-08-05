@@ -34,10 +34,12 @@ app.post('/api/calibrations', function(req, res) {
 
 app.post('/api/calibrations/:id/start', function(req, res) {
 	console.log("Start calibrations " + req.params.id);
-	res.end();
+	res.json({
+		ca_state: "start"
+	});
 });
 
-app.post('/api/calibrations/:id/status', function(req, res) {
+app.get('/api/calibrations/:id/status', function(req, res) {
 	console.log("Check the status of calibrations " + req.params.id);
 	res.json({
 		ca_state: "calibrated"
@@ -52,12 +54,16 @@ app.post('/api/recordings', function(req, res) {
 
 app.post('/api/recordings/:id/start', function(req, res) {
 	console.log("Start recording " + req.params.id);
-	res.end();
+	res.json({
+		re_state: "start"
+	});
 });
 
 app.post('/api/recordings/:id/stop', function(req, res) {
 	console.log("Stop recording " + req.params.id);
-	res.end();
+	res.json({
+		re_state: "stop"
+	});
 });
 
 var server = app.listen(80, function() {

@@ -5,28 +5,22 @@ var app = express();
 
 
 app.post('/api/projects', function(req, res) {
+	console.log("Creating new project");
     res.json({
-    	pr_id:"73z7vtv",
-    	pr_info:{Name:"my new project",
-    			 EagleId:"19"},
-    	pr_created:"2015-04-13T11:10:27+0000",
-    	uri:"/api/projects/73z7vtv"
+    	pr_id:"73z7vtv"
     });
 });
 
 app.post('/api/participants', function(req, res) {
+	console.log("Creating new participant");
 	res.json({
 		pa_id: "ymaagxo",
-		pa_info: {
-			EagleId: "73d",
-			Name: "participants005",
-			Notes: ""
-		},
 		pa_project: "73zyvtv",
 	});
 });
 
 app.post('/api/calibrations', function(req, res) {
+	console.log("Creating new calibration")
 	res.json( {
 		ca_id: "xsfsgsg"
 	})
@@ -47,6 +41,7 @@ app.get('/api/calibrations/:id/status', function(req, res) {
 })
 
 app.post('/api/recordings', function(req, res) {
+	console.log("Creating new recording")
 	res.json({
 		rec_id: "aasgasg"
 	})
